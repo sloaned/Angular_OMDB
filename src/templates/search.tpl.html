@@ -1,0 +1,9 @@
+
+<div>
+	Search for a movie
+	<input type="text" ng-model="search"/>
+	<button ng-click="makeSearch()">Search!</button>
+</div>
+<table ng-show="resultsFound">
+	<tr ng-repeat="result in results"><td><a ng-click="clickMovie(result.imdbID)">{{result.Title}}</a></td><td>{{result.Year}}</tr>
+</table>
