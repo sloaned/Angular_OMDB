@@ -1,12 +1,12 @@
-<div ng-init="getMovie()" id="movieDisplay">
+<div ng-init="getMovie()" id="movieDisplay" ng-show="resultFound">
 
-	<div class="container" ng-show="resultFound">
+	<div class="container">
 		<div class="row">
 			<div class="col-lg-4 orange"><h1>{{result.Title}}</h1></div>
 		</div>
 		<div class="row">
 			<div class="col-lg-4">
-				<img src={{result.Poster}}>
+				<img src={{poster}}>
 			</div>
 			<div class="col-lg-1"></div>
 			<div class="col-lg-3">
@@ -14,7 +14,7 @@
 				<span class="biggerText">{{result.Year}} </span><br>
 				<span>{{result.Country}}</span><br>
 				<span>{{result.Genre}}</span><br>
-				{{result.Runtime}} <br>
+				<span>{{result.Runtime}}</span> <br>
 				<span>{{result.Language}}</span><br>
 				<span>Rated {{result.Rated}}</span><br><br>
 				<span class="biggerText">IMDB Rating: {{result.imdbRating}}</span>
@@ -44,12 +44,13 @@
 				
 				</table>
 			</div>
-			<button id="addToList" ng-click="addMovieToList(result)">Add to your list!</button>
+			
 		
 		</div>
-	
-	
-	</div>
+		<div class="buttonWrapper">
+				<button id="reviseList" ng-click="reviseList(result)">{{onList && 'Remove from your list' || 'Add to your list!'}}</button>
+		</div>
 
 
+</div>
 </div>

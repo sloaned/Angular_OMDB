@@ -14,7 +14,7 @@
 	text-align: center;
 }
 
-.resultsTable, #addToList{
+.resultsTable{
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -38,14 +38,14 @@ ul, li{
 }
 
 #movieDisplay{
-	padding-bottom: 10em;
+	padding-bottom: 5em;
 }
 
 .orange{
 	color: #ffa64d;
 }
 
-#addToList{
+#reviseList{
 	background-color: #ffa64d;
 	color: black;
 	font-weight: bold;
@@ -54,18 +54,44 @@ ul, li{
 	border-radius: 5px;
 }
 
+.buttonWrapper{
+	text-align: center;
+	margin-top: 2em;
+}
+
 #footer{
-	margin-top: 5em;
-	height: 5em;
+	margin-top: 3em;
+	height: 3em;
 }
 
 #listPage{
-	background-color: #e6e6e6;
-	height: 80%;
+	background-color: #e5ffb3;
+	height: 100%;
 }
 
 .resultsTable td, .resultsTable th{
 	padding-right: 3em;
 }
 
+.resultsTable tbody:before{
+	content: "-";
+    display: block;
+    line-height: 1em;
+    color: transparent;
+}
 
+#mainPage{
+	background-color: #e5ffb3;
+	height: 100%;
+	text-align: center;
+}
+
+#searchPage{
+	background-color: #e5ffb3;
+	height: 100%;
+}
+
+#introText{
+	font-size: 6em;
+	font-family: Candara;
+}
