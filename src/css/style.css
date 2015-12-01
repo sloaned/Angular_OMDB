@@ -86,12 +86,21 @@ ul, li{
 	text-align: center;
 }
 
-#searchPage{
+#noView, #mainPage{
+	position: relative;
+}
+
+#searchPage, #noView{
 	background-color: #e5ffb3;
 	height: 100%;
 }
 
-#introText{
-	font-size: 6em;
+.introText{
+	font-size: 5em;
 	font-family: Candara;
+	 position: absolute;
+ 	 top: 50%;
+ 	 left: 50%;
+  	transform: translate(-50%, -50%);
+  	text-align: center;
 }
