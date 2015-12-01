@@ -1,10 +1,5 @@
 
 
-.row{
-	margin-top: 2em;
-	margin-bottom: 1em;
-}
-
 .navbar .navbar-default {
   display: inline-block;
   float: none;
@@ -19,8 +14,9 @@
 	text-align: center;
 }
 
-#resultsTable{
-	margin-left: 40em;
+.resultsTable, #addToList{
+	margin-left: auto;
+	margin-right: auto;
 }
 
 
@@ -60,5 +56,16 @@ ul, li{
 
 #footer{
 	margin-top: 5em;
+	height: 5em;
 }
+
+#listPage{
+	background-color: #e6e6e6;
+	height: 80%;
+}
+
+.resultsTable td, .resultsTable th{
+	padding-right: 3em;
+}
+
 

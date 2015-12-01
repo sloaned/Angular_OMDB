@@ -1,8 +1,9 @@
 'use strict';
 
-angular.module('routingLecture').controller('viewCtrl', ['$scope', 'viewFactory', 'sharedProperties',
-     function($scope, viewFactory, sharedProperties){
+angular.module('routingLecture').controller('viewCtrl', ['$scope', 'viewFactory', 'sharedProperties', '$location',
+     function($scope, viewFactory, sharedProperties, $location){
 		$scope.getMovie = function(){
+			$scope.resultFound = false;
 			$scope.movieId = sharedProperties.getMovieId();
 			viewFactory.searchCall($scope.movieId).then(
 				function(success){
@@ -10,10 +11,7 @@ angular.module('routingLecture').controller('viewCtrl', ['$scope', 'viewFactory'
 					$scope.result = success.data;
 					$scope.writers = success.data.Writer.split(', ');
 					$scope.directors = success.data.Director.split(', ');
-					$scope.genres = success.data.Genre.split(', ');
 					$scope.actors = success.data.Actors.split(', ');
-					$scope.langs = success.data.Language.split(', ');
-					$scope.countries = success.data.Country.split(', ');
 					console.log($scope.result);
 					console.log($scope.langs);
 				},
@@ -22,5 +20,12 @@ angular.module('routingLecture').controller('viewCtrl', ['$scope', 'viewFactory'
 					$scope.result = error;
 				}
 			);
+		};
+		$scope.addMovieToList = function(movie){
+			sharedProperties.addToMovieList(movie);
+			$location.path('list');
+		};
+		$scope.deleteMovie = function(movie){
+			sharedProperties.removeFromMovieList(movie);
 		};
 }]);

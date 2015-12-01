@@ -1,3 +1,13 @@
-<div>
-List
+<div id="listPage">
+<h1 class="centerText">My Movie List</h1><br>
+<table class="resultsTable">
+	<thead>
+		<tr><th>Title</th><th>Year</th><th>Director</th><th>Runtime</th></tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="movie in getList()"><td>{{movie.Title}}</td><td>{{movie.Year}}</td><td ng-repeat="director in getDirectors(movie)">{{director}} </td><td>{{movie.Runtime}}</td></tr>
+	</tbody>
+	
+</table>
+
 </div>

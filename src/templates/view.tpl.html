@@ -1,6 +1,6 @@
 <div ng-init="getMovie()" id="movieDisplay">
 
-	<div class="container">
+	<div class="container" ng-show="resultFound">
 		<div class="row">
 			<div class="col-lg-4 orange"><h1>{{result.Title}}</h1></div>
 		</div>
@@ -12,10 +12,10 @@
 			<div class="col-lg-3">
 				<br>
 				<span class="biggerText">{{result.Year}} </span><br>
-				<span ng-repeat="country in countries">{{country}} </span><br>
-				<span ng-repeat="genre in genres">{{genre}} </span><br>
+				<span>{{result.Country}}</span><br>
+				<span>{{result.Genre}}</span><br>
 				{{result.Runtime}} <br>
-				<span ng-repeat="language in langs">{{language}} </span><br>
+				<span>{{result.Language}}</span><br>
 				<span>Rated {{result.Rated}}</span><br><br>
 				<span class="biggerText">IMDB Rating: {{result.imdbRating}}</span>
 				
@@ -28,14 +28,15 @@
 		
 		</div>
 		<div class="row">
-			<div class="col-lg-4">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-3">
 				<h2 class="orange align">Cast</h2>
 				<ul class="unstyled">
 					<li ng-repeat="actor in actors">{{actor}}</li>
 				</ul>
 			</div>
-			<div class="col-lg-3"></div>
-			<div class="col-lg-5">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-4">
 				<h2 class="orange">Crew</h2>
 				<table>
 					<tr ng-repeat="director in directors"><td>Director:&nbsp</td><td>{{director}}</td></tr>
@@ -43,7 +44,7 @@
 				
 				</table>
 			</div>
-			<button id="addToList">Add to your list!</button>
+			<button id="addToList" ng-click="addMovieToList(result)">Add to your list!</button>
 		
 		</div>
 	
