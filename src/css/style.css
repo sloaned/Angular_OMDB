@@ -1,4 +1,59 @@
-.searchResult tr{
-	margin-left: 3em;
-	margin-right: 3em;
+
+
+.row{
+	margin-top: 2em;
 }
+
+.navbar .navbar-default {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar  {
+  text-align: center;
+}
+
+.centerText{
+	text-align: center;
+}
+
+#resultsTable{
+	margin-left: 40em;
+}
+
+
+.biggerText{
+	font-size: 1.5em;
+}
+
+ul, li{
+	list-style-type: none;
+}
+
+.align{
+	padding-left: 1.3em;
+}
+
+#movieDisplay, #movieDisplay tr{
+	background-color: #52527A;
+	color: white;
+}
+
+.orange{
+	color: #ffa64d;
+}
+
+#addToList{
+	background-color: #ffa64d;
+	color: black;
+	font-weight: bold;
+	font-size: 1.5em;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+#footer{
+	margin-top: 5em;
+}
+

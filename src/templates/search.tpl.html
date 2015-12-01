@@ -1,9 +1,11 @@
-
+<div class="centerText">
 <div>
 	Search for a movie
 	<input type="text" ng-model="search"/>
-	<button ng-click="makeSearch()">Search!</button>
+	<button ng-click="makeSearch()">Search!</button><br>
 </div>
-<table ng-show="resultsFound">
-	<tr ng-repeat="result in results"><td><a ng-click="clickMovie(result.imdbID)">{{result.Title}}</a></td><td>{{result.Year}}</tr>
+<br>
+<table ng-show="resultsFound" id="resultsTable">
+	<tr ng-repeat="result in results"><td><a ng-click="clickMovie(result.imdbID)">{{result.Title}}</a>&nbsp&nbsp</td><td>{{result.Year}}</tr>
 </table>
+</div>

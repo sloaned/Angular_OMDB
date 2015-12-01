@@ -18,7 +18,6 @@ angular.module('routingLecture').controller('searchCtrl', ['$location', '$scope'
 		$scope.clickMovie = function(id){
 			sharedProperties.setMovieId(id);
 			console.log("movie ID = " + sharedProperties.getMovieId());
-			//$state.go('view');
 			$location.path('view');
 		};
 	}]);
