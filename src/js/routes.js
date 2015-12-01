@@ -7,12 +7,12 @@ angular.module('routingLecture').config(['$stateProvider', '$urlRouterProvider',
 	$stateProvider.state('search', {
 		url: '/search',
 		templateUrl: 'templates/search.tpl.html',
-		controller: 'searchCtrl',
+		controller: 'searchCtrl'
 	})
 	.state('main', {
 		url: '/main',
 		templateUrl: 'templates/main.tpl.html',
-		controller: 'mainCtrl',
+		controller: 'mainCtrl'
 	})
 	.state('list', {
 		url: '/list',

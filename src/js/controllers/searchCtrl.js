@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('routingLecture').controller('searchCtrl', ['$state', '$scope', 'searchFactory', 'sharedProperties',
-    function($state, $scope, searchFactory, sharedProperties){
+angular.module('routingLecture').controller('searchCtrl', ['$location', '$scope', 'searchFactory', 'sharedProperties',
+    function($location, $scope, searchFactory, sharedProperties){
 		$scope.resultsFound = false;
 		$scope.makeSearch = function(){
 			searchFactory.searchCall($scope.search).then(
@@ -18,7 +18,7 @@ angular.module('routingLecture').controller('searchCtrl', ['$state', '$scope', '
 		$scope.clickMovie = function(id){
 			sharedProperties.setMovieId(id);
 			console.log("movie ID = " + sharedProperties.getMovieId());
-			$state.go('view');
-			//$location.path('/view');
+			//$state.go('view');
+			$location.path('view');
 		};
 	}]);
