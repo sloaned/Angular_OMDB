@@ -1,11 +1,11 @@
 <div id="listPage">
-<h1 class="centerText">My Movie List</h1><br>
+<h1 class="centerText candara">My Movie List</h1><br>
 <table class="resultsTable">
 	<thead>
-		<tr><th>Title</th><th>Year</th><th>Director</th><th>Runtime</th></tr>
+		<tr><th>Poster</th><th>Title</th><th>Year</th><th>Director</th><th>Runtime</th></tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="movie in getList()"><td><a ng-click="clickMovie(movie.imdbID)">{{movie.Title}}</a></td><td>{{movie.Year}}</td><td>{{movie.Director}}</td><td>{{movie.Runtime}}</td></tr>
+		<tr ng-repeat="movie in getList()"><td><img class="resize" src={{movie.Poster}}/><td><a ng-click="clickMovie(movie.imdbID)">{{movie.Title}}</a></td><td>{{movie.Year}}</td><td>{{movie.Director}}</td><td>{{movie.Runtime}}</td></tr>
 	</tbody>
 	
 </table>

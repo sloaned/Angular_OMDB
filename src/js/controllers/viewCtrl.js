@@ -27,7 +27,6 @@ angular.module('routingLecture').controller('viewCtrl', ['$scope', 'viewFactory'
 							$scope.result = error;
 						}
 					);
-				//sharedProperties.setMovieId("");
 			}
 		};
 		$scope.reviseList = function(movie){

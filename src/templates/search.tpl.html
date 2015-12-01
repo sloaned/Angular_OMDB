@@ -1,13 +1,13 @@
 <div ng-init="checkForResults()" id="searchPage" class="centerText">
 <div>
-	<h2>Search for a movie</h2>
+	<h1 class="centerText candara">Search for a movie</h1><br>
 	<form>
 		<input type="text" ng-model="search" ng-enter="makeSearch()"/>
 		<input type="submit" value="Search!" ng-click="makeSearch()"/>
 	</form><br>
 </div>
 <br>
-<table ng-show="resultsFound" class="resultsTable">
-	<tr ng-repeat="result in results"><td><a ng-click="clickMovie(result.imdbID)">{{result.Title}}</a>&nbsp&nbsp</td><td>{{result.Year}}</tr>
+<table ng-show="resultsFound" class="resultsTable biggerText">
+	<tr ng-repeat="result in results"><td><img class="resize" ng-src={{result.Poster}} err-src="http://www.balaniinfotech.com/wp-content/themes/balani/images/noimage.jpg"/></td><td><a ng-click="clickMovie(result.imdbID)">{{result.Title}}</a>&nbsp&nbsp</td><td>{{result.Year}}</tr>
 </table>
 </div>

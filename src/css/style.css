@@ -1,5 +1,4 @@
 
-
 .navbar .navbar-default {
   display: inline-block;
   float: none;
@@ -64,14 +63,11 @@ ul, li{
 	height: 3em;
 }
 
-#listPage{
-	background-color: #e5ffb3;
-	height: 100%;
-}
-
 .resultsTable td, .resultsTable th{
 	padding-right: 3em;
+	text-align: center;
 }
+
 
 .resultsTable tbody:before{
 	content: "-";
@@ -82,17 +78,22 @@ ul, li{
 
 #mainPage{
 	background-color: #e5ffb3;
-	height: 100%;
+	height: auto;
+	min-height: 100%;
 	text-align: center;
 }
 
-#noView, #mainPage{
+#noView, #mainPage, #listPage{
 	position: relative;
+	height: auto;
+	min-height: 100%;
 }
 
-#searchPage, #noView{
+#searchPage, #noView, #listPage{
+	padding-top: 2em;
 	background-color: #e5ffb3;
-	height: 100%;
+	height: auto;
+	min-height: 100%;
 }
 
 .introText{
@@ -103,4 +104,15 @@ ul, li{
  	 left: 50%;
   	transform: translate(-50%, -50%);
   	text-align: center;
+}
+
+.candara{
+	font-family: Candara;
+}
+
+.resize{
+	height: 150px;
+	width: auto;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }

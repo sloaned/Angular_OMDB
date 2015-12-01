@@ -2,7 +2,6 @@
 
 angular.module('routingLecture').controller('searchCtrl', ['$location', '$scope', 'searchFactory', 'sharedProperties',
     function($location, $scope, searchFactory, sharedProperties){
-		//sharedProperties.setMovieId("");
 		$scope.resultsFound = false;
 		$scope.checkForResults = function(){
 			$scope.results = sharedProperties.getSearchResults();
@@ -18,6 +17,13 @@ angular.module('routingLecture').controller('searchCtrl', ['$location', '$scope'
 					sharedProperties.setSearch($scope.search);
 					$scope.resultsFound = true;
 					$scope.results = success.data.Search;
+					for(var i = 0; i < $scope.results.length; i++)
+					{
+						if($scope.results[i].Poster.length < 5)
+						{
+							$scope.results[i].Poster = "http://www.balaniinfotech.com/wp-content/themes/balani/images/noimage.jpg";
+						}
+					}
 					sharedProperties.setSearchResults($scope.results);
 				},
 				function(error){
