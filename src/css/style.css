@@ -113,6 +113,6 @@ ul, li{
 .resize{
 	height: 150px;
 	width: auto;
-	padding-top: 1em;
-	padding-bottom: 1em;
+	padding-top: .5em;
+	padding-bottom: .5em;
 }

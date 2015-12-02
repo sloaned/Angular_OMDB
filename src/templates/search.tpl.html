@@ -7,6 +7,7 @@
 	</form><br>
 </div>
 <br>
+<ng-toast></ng-toast>
 <table ng-show="resultsFound" class="resultsTable biggerText">
 	<tr ng-repeat="result in results"><td><img class="resize" ng-src={{result.Poster}} err-src="http://www.balaniinfotech.com/wp-content/themes/balani/images/noimage.jpg"/></td><td><a ng-click="clickMovie(result.imdbID)">{{result.Title}}</a>&nbsp&nbsp</td><td>{{result.Year}}</tr>
 </table>

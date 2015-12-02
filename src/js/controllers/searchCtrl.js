@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('routingLecture').controller('searchCtrl', ['$location', '$scope', 'searchFactory', 'sharedProperties',
-    function($location, $scope, searchFactory, sharedProperties){
+angular.module('routingLecture').controller('searchCtrl', ['$location', '$scope', 'searchFactory', 'sharedProperties', 'ngToast',
+    function($location, $scope, searchFactory, sharedProperties, ngToast){
 		$scope.resultsFound = false;
 		$scope.checkForResults = function(){
 			$scope.results = sharedProperties.getSearchResults();
@@ -14,21 +14,35 @@ angular.module('routingLecture').controller('searchCtrl', ['$location', '$scope'
 		$scope.makeSearch = function(){
 			searchFactory.searchCall($scope.search).then(
 				function(success){
-					sharedProperties.setSearch($scope.search);
-					$scope.resultsFound = true;
-					$scope.results = success.data.Search;
-					for(var i = 0; i < $scope.results.length; i++)
+					if(success.data.Search === undefined)
 					{
-						if($scope.results[i].Poster.length < 5)
-						{
-							$scope.results[i].Poster = "http://www.balaniinfotech.com/wp-content/themes/balani/images/noimage.jpg";
-						}
+						ngToast.warning({
+							  content: 'No movies found'
+						});
 					}
-					sharedProperties.setSearchResults($scope.results);
+					else
+					{
+						sharedProperties.setSearch($scope.search);
+						
+						$scope.resultsFound = true;
+						$scope.results = success.data.Search;
+						for(var i = 0; i < $scope.results.length; i++)
+						{
+							if($scope.results[i].Poster.length < 5)
+							{
+								$scope.results[i].Poster = "http://www.balaniinfotech.com/wp-content/themes/balani/images/noimage.jpg";
+							}
+						}
+						sharedProperties.setSearchResults($scope.results);
+					}
+					
 				},
 				function(error){
 					$scope.resultsFound = false;
 					$scope.results = error;
+					ngToast.warning({
+						  content: 'No movies found'
+					});
 				}
 			);
 		};

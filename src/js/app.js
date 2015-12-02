@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('routingLecture', ['ui.router'])
+angular.module('routingLecture', ['ui.router', 'ngToast'])
 	.service('sharedProperties', function(){
 		var movieId = "";
 		var movieList = [];
